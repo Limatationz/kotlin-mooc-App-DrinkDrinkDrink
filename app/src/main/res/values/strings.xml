@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DrinkDrinkDrink!</string>
+    <string name="todaysProgression">Dein heutiger Fortschritt:</string>
+    <string name="drink">Trinken</string>
+    <string name="save">Speichern</string>
+    <string name="ml">ml</string>
+    <string name="addNewData">Neuen Eintrag hinzufügen:</string>
+    <string name="history">Historie</string>
+    <string name="start">Start</string>
+    <string name="input">Hinzufügen</string>
+</resources>
