@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import com.example.android.drinkdrinkdrink.MainActivity
 import com.example.android.drinkdrinkdrink.databinding.MainFragmentBinding
 
 
@@ -49,7 +50,11 @@ class MainFragment : Fragment() {
         viewModel.drinksToday.observe(viewLifecycleOwner, {
             viewModel.calculateProgressionToday(it)
         })
-        
+
+        (activity as MainActivity).temperature.observe(viewLifecycleOwner, {
+            viewModel.calculateVolumePerDay(it)
+        })
+
         return binding.root
     }
 

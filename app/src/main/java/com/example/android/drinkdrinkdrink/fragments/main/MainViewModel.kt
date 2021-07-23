@@ -11,11 +11,6 @@ import com.example.android.drinkdrinkdrink.repository.DrinkRepository
 import java.text.SimpleDateFormat
 import java.util.*
 
-/**
- * Empfohlenes Trinkvolumen pro Tag
- */
-private const val VOLUME_PER_DAY = 1500.0
-
 class MainViewModel(application: Application): ViewModel() {
 
     /**
@@ -44,10 +39,26 @@ class MainViewModel(application: Application): ViewModel() {
     private val _progressionToday = MutableLiveData<String>()
 
     /**
-     * Berechnet und setzt den Trinkfortschritt des aktuellen Tages in Prozent
+     * Tagesziel an Volumen
+     */
+    private var volumePerDay = 1500.0
+
+
+    /**
+     * Berechnet [volumePerDay] anhand der übergebenen [temperature]
+     */
+    fun calculateVolumePerDay(temperature: Int){
+        if(temperature > 15){
+            volumePerDay = 1500.00 + 100 * (temperature - 15)
+            calculateProgressionToday(drinksToday.value)
+        }
+    }
+
+    /**
+     * Berechnet und setzt den Trinkfortschritt in Prozent des aktuellen Tages
      */
     private fun setProgressionToday(addition: Int){
-        _progressionTodayPercent.value = (addition/VOLUME_PER_DAY * 100.0).toInt()
+        _progressionTodayPercent.value = (addition/volumePerDay * 100.0).toInt()
 
         if(_progressionTodayPercent.value?.compareTo(100) == 1)
             _progressionTodayPercent.value = 100

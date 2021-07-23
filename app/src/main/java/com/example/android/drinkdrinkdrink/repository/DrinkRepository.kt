@@ -36,6 +36,6 @@ class DrinkRepository (private val drinkDatabase: DrinkDatabase){
      * Fügt einen [drink] der [drinkDatabase] hinzu
      */
     suspend fun insertDrink(drink: Drink){
-        drinkDatabase.drinkDao.insert(drink.asDatabseModel())
+            drinkDatabase.drinkDao.insert(drink.asDatabseModel())
     }
 }
