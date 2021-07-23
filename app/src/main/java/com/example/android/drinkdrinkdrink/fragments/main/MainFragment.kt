@@ -22,6 +22,7 @@ class MainFragment : Fragment() {
      */
     private lateinit var viewModel: MainViewModel
 
+    @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
