@@ -55,7 +55,7 @@ class MainViewModel(application: Application): ViewModel() {
     }
 
     /**
-     * Berechnet und setzt den Trinkfortschritt in Prozent des aktuellen Tages
+     * Berechnet und setzt den Trinkfortschritt des aktuellen Tages in Prozent
      */
     private fun setProgressionToday(addition: Int){
         _progressionTodayPercent.value = (addition/volumePerDay * 100.0).toInt()

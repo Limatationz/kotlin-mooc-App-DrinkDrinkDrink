@@ -38,7 +38,7 @@ class InputFragment: Fragment() {
         drinkDatabase = getDrinkDatabase(requireActivity().applicationContext)
         drinkRepository = DrinkRepository(drinkDatabase)
 
-        //Wenn Speichern gedrückt wird, wird zuerst der Drink in DrinkDatabase gespeichert und dann zum MainFragment gewechselt.
+        //Wenn Speichern gedrückt wird, wird der Drink in DrinkDatabase gespeichert
         binding.saveButton.setOnClickListener {
             val drink = Drink((binding.volumeSpinner.selectedItem as String).toInt(), Date())
             GlobalScope.launch {

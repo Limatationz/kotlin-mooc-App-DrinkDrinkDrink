@@ -11,8 +11,8 @@ import androidx.core.app.ActivityCompat
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.navigation.findNavController
-import com.example.android.drinkdrinkdrink.fragments.HistoryFragmentDirections
 import com.example.android.drinkdrinkdrink.fragments.InputFragmentDirections
+import com.example.android.drinkdrinkdrink.fragments.history.HistoryFragmentDirections
 import com.example.android.drinkdrinkdrink.fragments.main.MainFragmentDirections
 import com.example.android.drinkdrinkdrink.repository.WeatherRepository
 import com.google.android.material.bottomnavigation.BottomNavigationView

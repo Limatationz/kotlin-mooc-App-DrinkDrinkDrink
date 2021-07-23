@@ -54,7 +54,7 @@ class MainFragment : Fragment() {
         (activity as MainActivity).temperature.observe(viewLifecycleOwner, {
             viewModel.calculateVolumePerDay(it)
         })
-
+        
         return binding.root
     }
 

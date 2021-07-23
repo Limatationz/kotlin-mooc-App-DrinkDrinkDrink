@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
-        android:name="com.example.android.drinkdrinkdrink.fragments.HistoryFragment"
+        android:name="com.example.android.drinkdrinkdrink.fragments.history.HistoryFragment"
         android:label="history_fragment"
         tools:layout="@layout/history_fragment" >
         <action
