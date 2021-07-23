@@ -27,4 +27,10 @@ interface DrinkDatabaseDao {
      */
     @Query("SELECT * FROM drinkdatabaseentitiy ORDER BY time DESC")
     fun getAll(): LiveData<List<DrinkDatabaseEntitiy>>
+
+    /**
+     * Gibt alle heutigen Datenbankeinträge aus
+     */
+    @Query("SELECT * FROM drinkdatabaseentitiy WHERE time >= :today ORDER BY time DESC")
+    fun getToday(today: Long): LiveData<List<DrinkDatabaseEntitiy>>
 }

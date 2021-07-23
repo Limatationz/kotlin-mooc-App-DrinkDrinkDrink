@@ -3,6 +3,7 @@ package com.example.android.drinkdrinkdrink.database
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
+import com.example.android.drinkdrinkdrink.domain.Drink
 import java.util.*
 
 /**
@@ -14,6 +15,18 @@ class DrinkDatabaseEntitiy (
     val id: Int,
     val volume: Int,
     val time: Date)
+
+/**
+ * Wandelt einen Datenbankeintrag in ein DomainModel um
+ */
+fun List<DrinkDatabaseEntitiy>.asDomainModel(): List<Drink>{
+    return map{
+        Drink(
+            volume = it.volume,
+            time = it.time
+        )
+    }
+}
 
 /**
  * Konvertierer, der es ermöglicht Daten in einer Datenbank zu speichern

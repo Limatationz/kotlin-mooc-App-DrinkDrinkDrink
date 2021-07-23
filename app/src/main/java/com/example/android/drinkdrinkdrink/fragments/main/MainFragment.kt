@@ -1,6 +1,5 @@
 package com.example.android.drinkdrinkdrink.fragments.main
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.android.drinkdrinkdrink.databinding.MainFragmentBinding
-import timber.log.Timber
 
 
 class MainFragment : Fragment() {
@@ -23,7 +21,6 @@ class MainFragment : Fragment() {
      */
     private lateinit var viewModel: MainViewModel
 
-    @SuppressLint("UseRequireInsteadOfGet")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -38,14 +35,19 @@ class MainFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
 
 
-        // Beobachtet viewmodel.progressionTodayPercent und übergibt den Wert bei Änderung updateProgressBar
+        // Beobachtet viewModel.progressionTodayPercent und übergibt den Wert bei Änderung updateProgressBar
         viewModel.progressionTodayPercent.observe(viewLifecycleOwner, {
             updateProgressBar(it)
         })
 
-        // Beobachtet viewmodel.progressionToday und setzt den Wert als Text der TextView dataTodayTextView
+        // Beobachtet viewModel.progressionToday und setzt den Wert als Text der TextView dataTodayTextView
         viewModel.progressionToday.observe(viewLifecycleOwner, {
             binding.dataTodayTextView.text = it.toString()
+        })
+
+        // Beobachtet viewModel.drinksToday
+        viewModel.drinksToday.observe(viewLifecycleOwner, {
+            viewModel.calculateProgressionToday(it)
         })
         
         return binding.root
