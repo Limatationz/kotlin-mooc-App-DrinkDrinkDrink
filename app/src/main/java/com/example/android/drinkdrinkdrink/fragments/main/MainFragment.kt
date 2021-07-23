@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.android.drinkdrinkdrink.databinding.MainFragmentBinding
+import timber.log.Timber
 
 
 class MainFragment : Fragment() {
@@ -31,9 +33,21 @@ class MainFragment : Fragment() {
         super.onCreate(savedInstanceState)
         binding = MainFragmentBinding.inflate(layoutInflater, container, false)
 
+        //Initialisiert das viewModel
         val application = requireNotNull(this.activity).application
         val viewModelFactory = MainViewModelFactory(application)
         viewModel = ViewModelProvider(this, viewModelFactory).get(MainViewModel::class.java)
+
+
+        // Beobachtet viewmodel.progressionTodayPercent und übergibt den Wert bei Änderung updateProgressBar
+        viewModel.progressionTodayPercent.observe(viewLifecycleOwner, {
+            updateProgressBar(it)
+        })
+
+        // Beobachtet viewmodel.progressionToday und setzt den Wert als Text der TextView dataTodayTextView
+        viewModel.progressionToday.observe(viewLifecycleOwner, {
+            binding.dataTodayTextView.text = it.toString()
+        })
         
         return binding.root
     }

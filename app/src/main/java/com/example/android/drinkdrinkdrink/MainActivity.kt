@@ -3,8 +3,8 @@ package com.example.android.drinkdrinkdrink
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
-import com.example.android.drinkdrinkdrink.fragments.InputFragmentDirections
 import com.example.android.drinkdrinkdrink.fragments.HistoryFragmentDirections
+import com.example.android.drinkdrinkdrink.fragments.InputFragmentDirections
 import com.example.android.drinkdrinkdrink.fragments.main.MainFragmentDirections
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import timber.log.Timber
