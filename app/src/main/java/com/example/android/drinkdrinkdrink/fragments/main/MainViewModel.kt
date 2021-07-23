@@ -11,6 +11,9 @@ import com.example.android.drinkdrinkdrink.repository.DrinkRepository
 import java.text.SimpleDateFormat
 import java.util.*
 
+/**
+ * Empfohlenes Trinkvolumen pro Tag
+ */
 private const val VOLUME_PER_DAY = 1500.0
 
 class MainViewModel(application: Application): ViewModel() {
