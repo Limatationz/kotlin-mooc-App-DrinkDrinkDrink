@@ -10,7 +10,7 @@ import java.util.*
  * Eintrag der Datenbank [DrinkDatabase]
  */
 @Entity
-class DrinkDatabaseEntity (
+data class DrinkDatabaseEntity (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val volume: Int,
