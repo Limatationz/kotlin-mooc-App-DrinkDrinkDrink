@@ -10,7 +10,7 @@ import java.util.*
  * Eintrag der Datenbank [DrinkDatabase]
  */
 @Entity
-class DrinkDatabaseEntitiy (
+class DrinkDatabaseEntity (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val volume: Int,
@@ -19,7 +19,7 @@ class DrinkDatabaseEntitiy (
 /**
  * Wandelt einen Datenbankeintrag in ein DomainModel um
  */
-fun List<DrinkDatabaseEntitiy>.asDomainModel(): List<Drink>{
+fun List<DrinkDatabaseEntity>.asDomainModel(): List<Drink>{
     return map{
         Drink(
             volume = it.volume,
@@ -39,6 +39,6 @@ class Converters {
 
     @TypeConverter
     fun dateToTimestamp(date: Date?): Long? {
-        return date?.time?.toLong()
+        return date?.time
     }
 }
