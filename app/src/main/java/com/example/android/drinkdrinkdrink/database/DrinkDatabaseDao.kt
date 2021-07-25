@@ -14,17 +14,17 @@ interface DrinkDatabaseDao {
      * Fügt einen Eintrag der Datenbank hinzu
      */
     @Insert
-    fun insert(data: DrinkDatabaseEntitiy)
+    fun insert(data: DrinkDatabaseEntity)
 
     /**
      * Löscht alle Einträge der Datenbank
      */
-    @Query("DELETE FROM drinkdatabaseentitiy")
+    @Query("DELETE FROM drinkdatabaseentity")
     fun clear()
 
     /**
      * Gibt alle Datenbankeinträge aus
      */
-    @Query("SELECT * FROM drinkdatabaseentitiy ORDER BY time DESC")
-    fun getAll(): LiveData<List<DrinkDatabaseEntitiy>>
+    @Query("SELECT * FROM drinkdatabaseentity ORDER BY time DESC")
+    fun getAll(): LiveData<List<DrinkDatabaseEntity>>
 }
