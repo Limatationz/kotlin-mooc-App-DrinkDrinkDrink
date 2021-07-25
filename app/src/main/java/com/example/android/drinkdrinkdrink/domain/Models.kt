@@ -1,6 +1,6 @@
 package com.example.android.drinkdrinkdrink.domain
 
-import com.example.android.drinkdrinkdrink.database.DrinkDatabaseEntitiy
+import com.example.android.drinkdrinkdrink.database.DrinkDatabaseEntity
 import java.util.*
 
 /**
@@ -11,10 +11,10 @@ data class Drink (val volume: Int,
                   val time: Date)
 
 /**
- * Wandelt einen [Drink] in eine [DrinkDatabaseEntitiy] um
+ * Wandelt einen [Drink] in eine [DrinkDatabaseEntity] um
  */
-fun Drink.asDatabaseEntity(): DrinkDatabaseEntitiy{
-    return DrinkDatabaseEntitiy(
+fun Drink.asDatabaseEntity(): DrinkDatabaseEntity{
+    return DrinkDatabaseEntity(
         id = 0,
         volume = this.volume,
         time = this.time

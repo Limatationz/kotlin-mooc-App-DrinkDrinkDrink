@@ -7,9 +7,9 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 
 /**
- * Room-Datenbank, die aus [DrinkDatabaseEntitiy]-Einträgen besteht
+ * Room-Datenbank, die aus [DrinkDatabaseEntity]-Einträgen besteht
  */
-@Database(entities = [DrinkDatabaseEntitiy::class], version = 1, exportSchema = false)
+@Database(entities = [DrinkDatabaseEntity::class], version = 1, exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class DrinkDatabase : RoomDatabase() {
     abstract val drinkDao: DrinkDatabaseDao
