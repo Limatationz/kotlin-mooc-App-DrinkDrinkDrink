@@ -5,7 +5,7 @@ import androidx.lifecycle.Transformations
 import com.example.android.drinkdrinkdrink.database.DrinkDatabase
 import com.example.android.drinkdrinkdrink.database.asDomainModel
 import com.example.android.drinkdrinkdrink.domain.Drink
-import com.example.android.drinkdrinkdrink.domain.asDatabseModel
+import com.example.android.drinkdrinkdrink.domain.asDatabaseEntity
 import java.util.*
 
 
@@ -36,6 +36,6 @@ class DrinkRepository (private val drinkDatabase: DrinkDatabase){
      * Fügt einen [drink] der [drinkDatabase] hinzu
      */
     suspend fun insertDrink(drink: Drink){
-            drinkDatabase.drinkDao.insert(drink.asDatabseModel())
+            drinkDatabase.drinkDao.insert(drink.asDatabaseEntity())
     }
 }

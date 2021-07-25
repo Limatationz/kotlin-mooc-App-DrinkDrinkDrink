@@ -13,7 +13,7 @@ data class Drink (val volume: Int,
 /**
  * Wandelt einen [Drink] in eine [DrinkDatabaseEntitiy] um
  */
-fun Drink.asDatabseModel(): DrinkDatabaseEntitiy{
+fun Drink.asDatabaseEntity(): DrinkDatabaseEntitiy{
     return DrinkDatabaseEntitiy(
         id = 0,
         volume = this.volume,
