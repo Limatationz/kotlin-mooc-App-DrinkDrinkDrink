@@ -15,7 +15,7 @@ class HistoryViewModel(application: Application): ViewModel() {
     private val drinkRepository: DrinkRepository = DrinkRepository(drinkDatabase)
 
     /**
-     * Feld, in dem die heutigen Einträge gespeichert sind
+     * Feld, in dem alle Einträge gespeichert sind
      */
     val drinks = drinkRepository.drinks
 
